@@ -1,1 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuando Te Veo Canto - Kezelvi</title>
 
+    <!-- INICIO: Etiquetas Open Graph para previsualización en redes sociales -->
+    <meta property="og:url" content="https://kezelvi.github.io/cuando.te.veo.canto.smart-link/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cuando Te Veo Canto - Kezelvi" />
+    <meta property="og:description" content="Escucha el nuevo sencillo de Kezelvi en tu plataforma de música preferida." />
+    <meta property="og:image" content="https://github.com/kezelvi/kezelvi.cuando-te-veo-canto-smart-link.github.io/blob/main/Cuando%20te%20veo%20canto%20Album%20Cover.png?raw=true" />
+
+    <!-- Etiquetas para Twitter Card (opcional pero recomendado) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cuando Te Veo Canto - Kezelvi">
+    <meta name="twitter:description" content="Escucha el nuevo sencillo de Kezelvi en tu plataforma de música preferida.">
+    <meta name="twitter:image" content="https://github.com/kezelvi/kezelvi.cuando-te-veo-canto-smart-link.github.io/blob/main/Cuando%20te%20veo%20canto%20Album%20Cover.png?raw=true">
+    <!-- FIN: Etiquetas Open Graph -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Definición de la fuente personalizada */
+        @font-face {
+          font-family: 'Crayon';
+          /* Se usa la URL del archivo "raw" (crudo) para que el navegador pueda acceder directamente a la fuente */
+          src: url('https://raw.githubusercontent.com/kezelvi/cuando.te.veo.canto.smart-link/5d632a2fc78bd7337e885ce6c343e133ca0e795b/CRAYON.TTF') format('truetype');
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Clase para aplicar la fuente Crayon */
+        .font-crayon {
+            font-family: 'Crayon', sans-serif;
+        }
+
+        .aspect-square {
+            aspect-ratio: 1 / 1;
+        }
+        
+        /* Estilo para el icono PNG de Spotify en las redes sociales */
+        .spotify-social-icon img {
+            filter: brightness(0) invert(0.7);
+            transition: filter 0.2s ease-in-out;
+        }
+        
+        /* Al pasar el mouse, el ícono se vuelve blanco */
+        .spotify-social-icon:hover img {
+            filter: brightness(0) invert(1);
+        }
+    </style>
+</head>
+<body class="bg-teal-500 min-h-screen flex flex-col items-center justify-center p-4">
+
+    <!-- Contenedor principal de la tarjeta -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden max-w-md w-full">
+
+        <!-- Sección de la portada del álbum -->
+        <div class="relative w-full aspect-square">
+            <!-- Imagen de portada -->
+            <img src="https://github.com/kezelvi/kezelvi.cuando-te-veo-canto-smart-link.github.io/blob/main/Cuando%20te%20veo%20canto%20Album%20Cover.png?raw=true" alt="Portada del álbum Cuando te veo canto" class="absolute inset-0 w-full h-full object-cover">
+            
+            <!-- Contenido superpuesto: solo el botón de play -->
+            <div class="relative h-full flex flex-col items-center justify-center text-white p-4">
+                <!-- Botón de Play/Pausa con ID para controlarlo con JavaScript -->
+                <div id="play-pause-btn" class="cursor-pointer my-4">
+                    <svg class="w-20 h-20 text-white opacity-90 hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" fill="rgba(0,0,0,0.5)"/>
+                        <!-- El ícono (path) también tiene un ID para poder cambiar entre play y pausa -->
+                        <path id="play-pause-icon" d="M9.5 16.5l7-4.5-7-4.5v9z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de enlaces a plataformas -->
+        <div class="p-6 bg-gray-100">
+            <h2 class="font-crayon text-3xl text-gray-800 mb-4 text-center tracking-wide">Elige tu servicio de música preferido</h2>
+
+            <div class="space-y-4">
+                <!-- Spotify -->
+                <div class="flex items-center justify-between bg-white p-3 rounded-lg shadow-sm">
+                    <div class="flex items-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify Logo" class="w-10 h-10 mr-4 object-contain">
+                        <span class="text-gray-700 font-medium">Spotify</span>
+                    </div>
+                    <a href="https://open.spotify.com/intl-es/album/0JWOGITSl1a2Gf3RxM81ln" target="_blank" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
+                        Reproducir
+                    </a>
+                </div>
+
+                <!-- Apple Music -->
+                <div class="flex items-center justify-between bg-white p-3 rounded-lg shadow-sm">
+                    <div class="flex items-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Apple_Music_icon.svg/2048px-Apple_Music_icon.svg.png" alt="Apple Music Logo" class="w-10 h-10 mr-4 object-contain">
+                        <span class="text-gray-700 font-medium">Apple Music</span>
+                    </div>
+                    <a href="https://music.apple.com/album/your-lifestyle-ep/1849822756" target="_blank" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
+                        Reproducir
+                    </a>
+                </div>
+
+                <!-- YouTube -->
+                <div class="flex items-center justify-between bg-white p-3 rounded-lg shadow-sm">
+                    <div class="flex items-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1200px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube Logo" class="w-10 h-10 mr-4 object-contain">
+                        <span class="text-gray-700 font-medium">YouTube</span>
+                    </div>
+                    <a href="https://youtu.be/dryGt8kEA-s" target="_blank" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
+                        Reproducir
+                    </a>
+                </div>
+                
+                <!-- TikTok -->
+                <div class="flex items-center justify-between bg-white p-3 rounded-lg shadow-sm">
+                    <div class="flex items-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Ionicons_logo-tiktok.svg/1024px-Ionicons_logo-tiktok.svg.png" alt="TikTok Logo" class="w-10 h-10 mr-4 object-contain">
+                        <span class="text-gray-700 font-medium">TikTok</span>
+                    </div>
+                    <a href="https://vt.tiktok.com/ZSH39XQ9hXPY9-Lc82J/" target="_blank" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
+                        Usar Sonido
+                    </a>
+                </div>
+
+                <!-- Deezer -->
+                <div class="flex items-center justify-between bg-white p-3 rounded-lg shadow-sm">
+                    <div class="flex items-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Deezer_New_Icon.svg/1200px-Deezer_New_Icon.svg.png" alt="Deezer Logo" class="w-10 h-10 mr-4 object-contain">
+                        <span class="text-gray-700 font-medium">Deezer</span>
+                    </div>
+                    <a href="https://link.deezer.com/s/31Di3PTdQemasyohW8PXc" target="_blank" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
+                        Reproducir
+                    </a>
+                </div>
+
+                <!-- Amazon Music -->
+                <div class="flex items-center justify-between bg-white p-3 rounded-lg shadow-sm">
+                    <div class="flex items-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Amazon_Music_logo.svg/2560px-Amazon_Music_logo.svg.png" alt="Amazon Music Logo" class="w-10 h-10 mr-4 object-contain">
+                        <span class="text-gray-700 font-medium">Amazon Music</span>
+                    </div>
+                    <a href="https://music.amazon.com/tracks/B0FZRJN71Y" target="_blank" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
+                        Reproducir
+                    </a>
+                </div>
+
+                <!-- Tidal -->
+                <div class="flex items-center justify-between bg-white p-3 rounded-lg shadow-sm">
+                    <div class="flex items-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Tidal_%28service%29_logo_only.svg/2048px-Tidal_%28service%29_logo_only.svg.png" alt="Tidal Logo" class="w-10 h-10 mr-4 object-contain">
+                        <span class="text-gray-700 font-medium">Tidal</span>
+                    </div>
+                    <a href="https://tidal.com/album/472513675/u" target="_blank" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
+                        Reproducir
+                    </a>
+                </div>
+
+                <!-- Claro Música -->
+                <div class="flex items-center justify-between bg-white p-3 rounded-lg shadow-sm">
+                    <div class="flex items-center">
+                        <img src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/062015/1_57.png" alt="Claro Música Logo" class="w-10 h-10 mr-4 object-contain">
+                        <span class="text-gray-700 font-medium">Claro Música</span>
+                    </div>
+                    <a href="https://www.claromusica.com/album/74656300" target="_blank" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
+                        Reproducir
+                    </a>
+                </div>
+
+                <!-- SoundCloud ELIMINADO -->
+            </div>
+        </div>
+
+        <!-- Sección de redes sociales -->
+        <div class="bg-gray-800 p-4 flex justify-around items-center rounded-b-xl">
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/kezelvi" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="Facebook">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/kezelvi/" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg>
+            </a>
+            <!-- X (Twitter) -->
+            <a href="https://x.com/KezelVi" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="X">
+                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <!-- Spotify Artist -->
+            <a href="https://open.spotify.com/intl-es/artist/4mDL3loGCnXh9V4sxLYjHq" target="_blank" class="spotify-social-icon" aria-label="Spotify Artist Profile">
+                <img class="w-8 h-8" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2000px-Spotify_logo_without_text.svg.png" alt="Spotify Artist Profile">
+            </a>
+        </div>
+    </div>
+
+    <!-- INICIO: Nueva Sección de Videos de YouTube -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden max-w-md w-full mt-6">
+        <div class="p-6">
+            <h2 class="font-crayon text-3xl text-gray-800 mb-4 text-center tracking-wide">Otras Versiones</h2>
+            <div class="flex flex-col space-y-4">
+
+                <!-- Nuevo Video -->
+                <a href="https://youtu.be/EBAAnY_f5hs?si=dK2OY2EIONGNH2O-" target="_blank" class="block group">
+                    <div class="relative rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://img.youtube.com/vi/EBAAnY_f5hs/maxresdefault.jpg" alt="Miniatura del video Visualizer" class="w-full h-auto object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Video Instrumental -->
+                <a href="https://youtu.be/w0-SEpoWOr8?si=AvdfTw_emE99OjrI" target="_blank" class="block group">
+                    <div class="relative rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://img.youtube.com/vi/w0-SEpoWOr8/maxresdefault.jpg" alt="Miniatura del video Instrumental" class="w-full h-auto object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Video Acapella -->
+                <a href="https://youtu.be/D8TP0N8VqLQ?si=PZKkjViLpEUpQmlQ" target="_blank" class="block group">
+                    <div class="relative rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://img.youtube.com/vi/D8TP0N8VqLQ/maxresdefault.jpg" alt="Miniatura del video Acapella" class="w-full h-auto object-cover">
+                         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Video Karaoke -->
+                <a href="https://youtu.be/jrK6ZF8UwyY?si=afO6-BCn2d5UMcYp" target="_blank" class="block group">
+                    <div class="relative rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://img.youtube.com/vi/jrK6ZF8UwyY/maxresdefault.jpg" alt="Miniatura del video Karaoke" class="w-full h-auto object-cover">
+                         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+    <!-- FIN: Nueva Sección de Videos de YouTube -->
+
+    <!-- Elemento de audio para la previsualización -->
+    <audio id="audio-preview" src="https://raw.githubusercontent.com/kezelvi/kezelvi.cuando-te-veo-canto-smart-link.github.io/main/ctvc%20preview.mp3" crossorigin="anonymous"></audio>
+
+    <script>
+        // --- Lógica para el reproductor de audio ---
+        
+        // Obtener los elementos del DOM
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const playPauseIcon = document.getElementById('play-pause-icon');
+        const audio = document.getElementById('audio-preview');
+
+        // Definir las formas de los íconos de play y pausa
+        const playIconPath = "M9.5 16.5l7-4.5-7-4.5v9z";
+        const pauseIconPath = "M8 7h3v10H8zm5 0h3v10h-3z";
+
+        // Función para controlar la reproducción
+        function togglePlayPause() {
+            if (audio.paused) {
+                audio.play();
+                playPauseIcon.setAttribute('d', pauseIconPath);
+            } else {
+                audio.pause();
+                playPauseIcon.setAttribute('d', playIconPath);
+            }
+        }
+
+        // Agregar el evento de clic al botón
+        playPauseBtn.addEventListener('click', togglePlayPause);
+
+        // Cuando el audio termine, volver a poner el ícono de play
+        audio.addEventListener('ended', () => {
+            playPauseIcon.setAttribute('d', playIconPath);
+        });
+    </script>
+
+</body>
+</html>
