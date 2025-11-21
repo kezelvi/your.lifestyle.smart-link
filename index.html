@@ -169,9 +169,7 @@
             </div>
         </div>
 
-        <!-- Sección de redes sociales -->
-        <div class="bg-black p-4 flex justify-around items-center rounded-b-xl">
-            <!-- Sección de redes sociales -->
+<!-- Sección de redes sociales -->
 <div class="bg-black p-4 flex justify-around items-center rounded-b-xl">
 
     <!-- Facebook -->
@@ -206,7 +204,7 @@
         </svg>
     </a>
 
-    <!-- Spotify Artist (en SVG para que tome color igual que los demás) -->
+    <!-- Spotify Artist -->
     <a href="https://open.spotify.com/intl-es/artist/4mDL3loGCnXh9V4sxLYjHq" 
        target="_blank" 
        class="text-sky-500 hover:text-sky-500 transition-colors" 
@@ -218,89 +216,37 @@
 
 </div>
 
-    <!-- INICIO: Nueva Sección de Videos de YouTube -->
-    <div class="bg-white rounded-xl shadow-lg overflow-hidden max-w-md w-full mt-6">
-        <div class="p-6">
-            <h2 class="font-crayon text-3xl text-gray-800 mb-4 text-center tracking-wide">Otras Versiones</h2>
-            <div class="flex flex-col space-y-4">
+<!-- SEPARACIÓN ENTRE SECCIONES -->
+<div class="mt-8"></div>
 
-                <!-- Nuevo Video -->
-                <a href="https://youtu.be/EBAAnY_f5hs?si=dK2OY2EIONGNH2O-" target="_blank" class="block group">
-                    <div class="relative rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-shadow duration-300">
-                        <img src="https://img.youtube.com/vi/EBAAnY_f5hs/maxresdefault.jpg" alt="Miniatura del video Visualizer" class="w-full h-auto object-cover">
-                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
-                    </div>
-                </a>
-                
-<!-- Video Instrumental -->
-<a href="https://youtu.be/veeUABIodhQ?si=r_sbYeqH7GDMbvlH" target="_blank" class="block group">
-    <div class="relative rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-shadow duration-300">
-        <img src="https://i.ytimg.com/vi/veeUABIodhQ/hqdefault.jpg" 
-             alt="Miniatura del video Instrumental" 
-             class="w-full h-auto object-cover">
-        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-            </svg>
-        </div>
-    </div>
-</a>
+<!-- Sección de Videos de YouTube -->
+<div class="bg-white rounded-xl shadow-lg overflow-hidden max-w-md w-full">
+    <div class="p-6">
+        <h2 class="font-crayon text-3xl text-gray-800 mb-4 text-center tracking-wide">Otras Versiones</h2>
 
-<!-- Video Acapella -->
-<a href="https://youtu.be/0oCTXRM406o?si=70NFL_jFF_DLfo-P" target="_blank" class="block group">
-    <div class="relative rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-shadow duration-300">
-        <img src="https://i.ytimg.com/vi/0oCTXRM406o/maxresdefault.jpg" 
-             alt="Miniatura del video Acapella" 
-             class="w-full h-auto object-cover">
-        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-            </svg>
-        </div>
-    </div>
-</a>
+        <div class="flex flex-col space-y-4">
 
-            </div>
-        </div>
-    </div>
-    <!-- FIN: Nueva Sección de Videos de YouTube -->
-
-    <!-- Elemento de audio para la previsualización -->
-    <audio id="audio-preview" src="https://raw.githubusercontent.com/kezelvi/your.lifestyle.smart-link/refs/heads/main/Preview.mp3" crossorigin="anonymous"></audio>
-
-    <script>
-        // --- Lógica para el reproductor de audio ---
         
-        // Obtener los elementos del DOM
-        const playPauseBtn = document.getElementById('play-pause-btn');
-        const playPauseIcon = document.getElementById('play-pause-icon');
-        const audio = document.getElementById('audio-preview');
+            <!-- Instrumental -->
+            <a href="https://youtu.be/veeUABIodhQ?si=r_sbYeqH7GDMbvlH" target="_blank" class="block group">
+                <div class="relative rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://i.ytimg.com/vi/veeUABIodhQ/hqdefault.jpg" class="w-full h-auto object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                </div>
+            </a>
 
-        // Definir las formas de los íconos de play y pausa
-        const playIconPath = "M9.5 16.5l7-4.5-7-4.5v9z";
-        const pauseIconPath = "M8 7h3v10H8zm5 0h3v10h-3z";
+            <!-- Acapella -->
+            <a href="https://youtu.be/0oCTXRM406o?si=70NFL_jFF_DLfo-P" target="_blank" class="block group">
+                <div class="relative rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://i.ytimg.com/vi/0oCTXRM406o/maxresdefault.jpg" class="w-full h-auto object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                </div>
+            </a>
 
-        // Función para controlar la reproducción
-        function togglePlayPause() {
-            if (audio.paused) {
-                audio.play();
-                playPauseIcon.setAttribute('d', pauseIconPath);
-            } else {
-                audio.pause();
-                playPauseIcon.setAttribute('d', playIconPath);
-            }
-        }
-
-        // Agregar el evento de clic al botón
-        playPauseBtn.addEventListener('click', togglePlayPause);
-
-        // Cuando el audio termine, volver a poner el ícono de play
-        audio.addEventListener('ended', () => {
-            playPauseIcon.setAttribute('d', playIconPath);
-        });
-    </script>
-
-</body>
-</html>
+        </div>
+    </div>
+</div>
