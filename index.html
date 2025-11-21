@@ -250,3 +250,41 @@
         </div>
     </div>
 </div>
+
+            <!-- Elemento de audio para la previsualización -->
+    <audio id="audio-preview" src="https://raw.githubusercontent.com/kezelvi/your.lifestyle.smart-link/refs/heads/main/Preview.mp3" crossorigin="anonymous"></audio>
+
+    <script>
+        // --- Lógica para el reproductor de audio ---
+        
+        // Obtener los elementos del DOM
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const playPauseIcon = document.getElementById('play-pause-icon');
+        const audio = document.getElementById('audio-preview');
+
+        // Definir las formas de los íconos de play y pausa
+        const playIconPath = "M9.5 16.5l7-4.5-7-4.5v9z";
+        const pauseIconPath = "M8 7h3v10H8zm5 0h3v10h-3z";
+
+        // Función para controlar la reproducción
+        function togglePlayPause() {
+            if (audio.paused) {
+                audio.play();
+                playPauseIcon.setAttribute('d', pauseIconPath);
+            } else {
+                audio.pause();
+                playPauseIcon.setAttribute('d', playIconPath);
+            }
+        }
+
+        // Agregar el evento de clic al botón
+        playPauseBtn.addEventListener('click', togglePlayPause);
+
+        // Cuando el audio termine, volver a poner el ícono de play
+        audio.addEventListener('ended', () => {
+            playPauseIcon.setAttribute('d', playIconPath);
+        });
+    </script>
+
+</body>
+</html>
